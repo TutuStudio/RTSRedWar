@@ -1,0 +1,9 @@
+Generate/
+Debug/
+metadata/
+Library/
+StreamingAssets/
+
+
+*.csproj
+*.sln
