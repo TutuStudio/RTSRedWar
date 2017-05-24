@@ -15,6 +15,8 @@ require "Logic/CtrlManager"
 require "Common/functions"
 require "Controller/PromptCtrl"
 
+require "LuaScripts/UISystems/Common/UIManager"
+
 --管理器--
 Game = {};
 local this = Game;
@@ -32,6 +34,10 @@ end
 
 --初始化完成，发送链接服务器信息--
 function Game.OnInitOK()
+    --打开LoginPanel
+    UIManager.Init()
+    UIManager.ShowPanel("LoginPanel",'打开LoginPanel时传输的数据')
+    --[[
     AppConst.SocketPort = 2012;
     AppConst.SocketAddress = "127.0.0.1";
     networkMgr:SendConnect();
@@ -52,7 +58,8 @@ function Game.OnInitOK()
     if ctrl ~= nil and AppConst.ExampleMode == 1 then
         ctrl:Awake();
     end
-       
+    ]]
+    
     logWarn('LuaFramework InitOK--->>>');
 end
 
