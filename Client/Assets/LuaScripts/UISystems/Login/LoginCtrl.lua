@@ -1,4 +1,6 @@
-require "Login/LoginProxy"
+require "UISystems/Login/LoginProxy"
+require "UISystems/Login/LoginPanel"
+require "UISystems/Common/UICtrl"
 --需要指定uiShowType,或者默认就是ShowOnly
 
 LoginCtrl = UICtrl:New({uiShowType = UIShowType.ShowOnly})
@@ -17,7 +19,7 @@ end
 function this.OnCreate( obj )
 	gameObject = obj
 	transform = obj.transform
-	LoginPanel.luaBehavior:AddClick(LoginPanel.loginBtn,this.OnLoginClick)
+	LoginPanel.luaBehaviour:AddClick(LoginPanel.loginBtn,this.OnLoginClick)
 end
 
 function this.OnLoginClick()

@@ -12,22 +12,18 @@ function this.Awake( obj )
 	this.InitPanel()
 end
 
-local usernameInput
-local pwdInput
-local loginBtn
-local luaBehaviour
-
 function this.InitPanel()
-	usernameInput = transform:FindChild("Username"):GetComponent("InputField")
-	pwdInput = transform:FindChild("Pwd"):GetComponent("InputField")
-	loginBtn = transform:FindChild("LoginBtn").gameObject
-	luaBehaviour = transform:GetComponent('luaBehaviour')
+	this.usernameInput = transform:FindChild("accountInput"):GetComponent("InputField")
+	this.pwdInput = transform:FindChild("pwdInput"):GetComponent("InputField")
+	this.loginBtn = transform:FindChild("loginBtn").gameObject
+	this.luaBehaviour = transform:GetComponent('LuaBehaviour')
 end
 
 function this.GetUserName()
-	return usernameInput.text
+	this.usernameInput = transform:FindChild("accountInput"):GetComponent("InputField")
+	return this.usernameInput.text
 end
 
 function LoginPanel.GetPwd()
-	return pwdInput.text
+	return this.pwdInput.text
 end

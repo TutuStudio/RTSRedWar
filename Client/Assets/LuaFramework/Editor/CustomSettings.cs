@@ -13,6 +13,7 @@ public static class CustomSettings
     public static string FrameworkPath = AppConst.FrameworkRoot;
     public static string saveDir = FrameworkPath + "/ToLua/Source/Generate/";
     public static string luaDir = FrameworkPath + "/Lua/";
+    public static string luaScpritDir = Application.dataPath + "/LuaScripts/";
     public static string toluaBaseType = FrameworkPath + "/ToLua/BaseType/";
 	public static string toluaLuaDir = FrameworkPath + "/ToLua/Lua";
 
@@ -145,7 +146,8 @@ public static class CustomSettings
         _GT(typeof(BlendWeights)),           
         _GT(typeof(RenderTexture)), 
 		_GT(typeof(Resources)),      
-          
+         
+        _GT(typeof(InputField)),
         //for LuaFramework
         _GT(typeof(RectTransform)),
         _GT(typeof(Text)),

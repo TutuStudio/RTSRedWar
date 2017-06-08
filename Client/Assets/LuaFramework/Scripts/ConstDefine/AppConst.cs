@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace LuaFramework {
     public class AppConst {
-        public const bool DebugMode = false;                       //调试模式-用于内部测试
+        public const bool DebugMode = true;                       //调试模式-用于内部测试
         /// <summary>
         /// 如果想删掉框架自带的例子，那这个例子模式必须要
         /// 关闭，否则会出现一些错误。
         /// </summary>
-        public const bool ExampleMode = true;                       //例子模式 
+        public const bool ExampleMode = false;                       //例子模式 
 
         /// <summary>
         /// 如果开启更新模式，前提必须启动框架自带服务器端。
@@ -19,13 +19,14 @@ namespace LuaFramework {
         /// </summary>
         public const bool UpdateMode = false;                       //更新模式-默认关闭 
         public const bool LuaByteMode = false;                       //Lua字节码模式-默认关闭 
-        public const bool LuaBundleMode = true;                    //Lua代码AssetBundle模式
+        public const bool LuaBundleMode = false;                    //Lua代码AssetBundle模式
 
         public const int TimerInterval = 1;
         public const int GameFrameRate = 30;                        //游戏帧频
 
         public const string AppName = "LuaFramework";               //应用程序名称
         public const string LuaTempDir = "Lua/";                    //临时目录
+        public const string LuaScriptDir = "LuaScript/";               //游戏逻辑脚本目录
         public const string AppPrefix = AppName + "_";              //应用程序前缀
         public const string ExtName = ".unity3d";                   //素材扩展名
         public const string AssetDir = "StreamingAssets";           //素材目录 

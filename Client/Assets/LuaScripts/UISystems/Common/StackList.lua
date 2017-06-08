@@ -1,4 +1,4 @@
-require "LuaFramework/Lua/Common/functions"
+require "Common/functions"
 
 StackList = {}
 local count = 0
@@ -36,7 +36,7 @@ end
 
 function StackList:Contain( element )
 	for v in ipairs(self.stack_list) do
-		if v = element then
+		if v == element then
 			return true
 		end
 	end

@@ -1,8 +1,8 @@
-require "LuaFramework/Lua/Common/functions"
+require "Common/functions"
 
 --检查新引用值
 local DealOverrideParams = function ( table,key,value )
-	if tostring(key)  = 'uiShowType' then
+	if tostring(key)  == 'uiShowType' then
 		if type(value) ~= 'number' then
 			--logError("UI框架 占用的key ，uiShowType必须为number")
 		else
@@ -15,7 +15,7 @@ local DealOverrideParams = function ( table,key,value )
 	end
 end
 
-UICtrl = {panelName = '',gameObject = UnityEngine.Object}
+UICtrl = {panelName = '',gameObject = nil }--UnityEngine.Object}
 local Base = UICtrl
 
 function UICtrl:New( obj )
@@ -39,6 +39,7 @@ function UICtrl:ShowPanel( data )
 	if self.gameObject == nil then
 		self:CreatePanel()
 	else
+		--logError("self.gameObject " .. self.gameObject)
 		self.gameObject:SetActive(true)
 	end
 	if self.OnShowPanel ~= nil then
@@ -66,7 +67,7 @@ end
 
 --这里会卸载panel
 function UICtrl:DestroyPanel()
-	if self.gameObject = nil then
+	if self.gameObject == nil then
 		return
 	end
 	panelMgr:ClosePanel(self.panelName)

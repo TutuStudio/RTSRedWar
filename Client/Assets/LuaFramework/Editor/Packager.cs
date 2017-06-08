@@ -103,7 +103,7 @@ public class Packager {
         string streamDir = Application.dataPath + "/" + AppConst.LuaTempDir;
         if (!Directory.Exists(streamDir)) Directory.CreateDirectory(streamDir);
 
-        string[] srcDirs = { CustomSettings.luaDir, CustomSettings.FrameworkPath + "/ToLua/Lua" };
+        string[] srcDirs = { CustomSettings.luaScpritDir, CustomSettings.luaDir, CustomSettings.FrameworkPath + "/ToLua/Lua" };
         for (int i = 0; i < srcDirs.Length; i++) {
             if (AppConst.LuaByteMode) {
                 string sourceDir = srcDirs[i];
@@ -163,9 +163,11 @@ public class Packager {
 
         AddBuildMap("prompt" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Prompt");
         AddBuildMap("message" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Message");
+        AddBuildMap("loginpanel" + AppConst.ExtName, "*.prefab", "Assets/Resource/Prefabs/UIPrefab/LoginUI");
 
         AddBuildMap("prompt_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Prompt");
         AddBuildMap("shared_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Shared");
+        AddBuildMap("loginBg_asset" + AppConst.ExtName, "*.jpg", "Assets/Resource/Sprite/UIResource/loginUIRes");
     }
 
     /// <summary>

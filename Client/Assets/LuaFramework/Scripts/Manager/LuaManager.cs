@@ -73,6 +73,7 @@ namespace LuaFramework {
                 string rootPath = AppConst.FrameworkRoot;
                 lua.AddSearchPath(rootPath + "/Lua");
                 lua.AddSearchPath(rootPath + "/ToLua/Lua");
+                lua.AddSearchPath(Application.dataPath + "/LuaScripts");
             } else {
                 lua.AddSearchPath(Util.DataPath + "lua");
             }
@@ -100,6 +101,9 @@ namespace LuaFramework {
                 loader.AddBundle("lua/lua_3rd_pbc.unity3d");
                 loader.AddBundle("lua/lua_3rd_pblua.unity3d");
                 loader.AddBundle("lua/lua_3rd_sproto.unity3d");
+                loader.AddBundle("lua/lua_uisystems_common.unity3d");
+                loader.AddBundle("lua/lua_uisystems_interface.unity3d");
+                loader.AddBundle("lua/lua_uisystems_login.unity3d");
             }
         }
 

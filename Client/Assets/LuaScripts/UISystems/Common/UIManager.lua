@@ -1,5 +1,5 @@
 require "UISystems/Common/UIDefine"
-require "Common/StackList"
+require "UISystems/Common/StackList"
 
 UIManager = {}
 
@@ -26,8 +26,8 @@ function this.Init()
 		local panel = panelName
 		--替换字符串
 		local ctrlName = string.gsub(panel,'Panel','Ctrl')
-		local ctrl = require(path,ctrlName)
-		if type(ctrl) = 'boolean' then
+		local ctrl = require(path .. ctrlName)
+		if type(ctrl) == 'boolean' then
 			error(' require ctrl error, 找不到lua文件 path:' .. path ..ctrlName)
 		end
 		ctrlList[panelName] = ctrl
@@ -44,7 +44,7 @@ function this.ShowPanel( panelName,data )
 	local beforePanelCtrl = curPanelCtrl
 
 	local openPanelCtrl = ctrlList[panelName]
-	if openPanelCtrl.uiShowType = nil then
+	if openPanelCtrl.uiShowType == nil then
 		openPanelCtrl.uiShowType = UIShowType.ShowOnly
 	end
 
@@ -65,6 +65,7 @@ function this.ShowPanel( panelName,data )
 
 		this.PushPanelStack(openPanelCtrl.panelName)
 	end
+	logWarn("openPanelCtrl:ShowPanel( " .. data .." )")
 	openPanelCtrl:ShowPanel(data)
 	curPanelCtrl = openPanelCtrl
 end

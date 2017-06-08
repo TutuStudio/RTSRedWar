@@ -6,5 +6,5 @@ function this.Init()
 end
 
 function this.Login( username,pwd,serverId )
-	-- body
+	logWarn("asdfasdfasdf")
 end
