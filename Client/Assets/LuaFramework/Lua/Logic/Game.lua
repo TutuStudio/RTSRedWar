@@ -37,7 +37,7 @@ function Game.OnInitOK()
     --打开LoginPanel
     logWarn("OnInitOK")
     UIManager.Init()
-    UIManager.ShowPanel("LoginPanel",'打开LoginPanel时传输的数据')
+    UIManager.ShowPanel("Login",'打开LoginPanel时传输的数据')
     --[[AppConst.SocketPort = 2012;
     AppConst.SocketAddress = "127.0.0.1";
     networkMgr:SendConnect();

@@ -21,9 +21,8 @@ function this.Init()
 	--logWarn("ctrl mgr init ctrl len is :");
 	panelStack = StackList:New()
 	for panelName ,path in pairs(UIPanels) do
-		require(path .. panelName)
-		--log(‘req panel name : ’ .. panelName)
-		local panel = panelName
+		local panel = panelName ..'Panel'
+		require(path .. panel)
 		--替换字符串
 		local ctrlName = string.gsub(panel,'Panel','Ctrl')
 		local ctrl = require(path .. ctrlName)
@@ -33,7 +32,7 @@ function this.Init()
 		ctrlList[panelName] = ctrl
 		--attempt to index a boolean value
 		--出现上面的错误，说明require路径没写对
-		ctrlList[panelName].panelName = panel --这里复制panel给UICtrl
+		ctrlList[panelName].panelName = panelName --这里复制panel给UICtrl
 		ctrlList[panelName].Init()
 	end
 end

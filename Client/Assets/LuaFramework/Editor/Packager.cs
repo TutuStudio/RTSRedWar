@@ -74,6 +74,9 @@ public class Packager {
         if (AppConst.ExampleMode) {
             HandleExampleBundle();
         }
+
+        HandleGameBundle();
+
         string resPath = "Assets/" + AppConst.AssetDir;
         BuildPipeline.BuildAssetBundles(resPath, maps.ToArray(), BuildAssetBundleOptions.None, target);
         BuildFileIndex();
@@ -163,10 +166,14 @@ public class Packager {
 
         AddBuildMap("prompt" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Prompt");
         AddBuildMap("message" + AppConst.ExtName, "*.prefab", "Assets/LuaFramework/Examples/Builds/Message");
-        AddBuildMap("loginpanel" + AppConst.ExtName, "*.prefab", "Assets/Resource/Prefabs/UIPrefab/LoginUI");
-
+        
         AddBuildMap("prompt_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Prompt");
         AddBuildMap("shared_asset" + AppConst.ExtName, "*.png", "Assets/LuaFramework/Examples/Textures/Shared");
+    }
+
+    static void HandleGameBundle()
+    {
+        AddBuildMap("login" + AppConst.ExtName, "*.prefab", "Assets/Resource/Prefabs/UIPrefab/LoginUI");
         AddBuildMap("loginBg_asset" + AppConst.ExtName, "*.jpg", "Assets/Resource/Sprite/UIResource/loginUIRes");
     }
 

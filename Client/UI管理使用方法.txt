@@ -1,0 +1,5 @@
+['Login'] = "UISystems/Login/",
+1.AsssetBundle注册 login是Login的全小写
+AddBuildMap("login" + AppConst.ExtName, "*.prefab", "Assets/Resource/Prefabs/UIPrefab/LoginUI");
+2.Ctrl Panel Proxy 要以Login开头 后跟上关键字Ctrl Panel Proxy
+3.打开UIManager.ShowPanel("Login",'打开LoginPanel时传输的数据')
